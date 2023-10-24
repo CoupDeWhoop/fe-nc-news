@@ -16,7 +16,7 @@
 }
 .Nav {
   position: fixed;
-  top: 70px; /* Adjust this value to match height of header */
+  top: 70px; /* Adjusted to match height of header */
   left: 0;
   width: 100%;
   color:black;
@@ -33,6 +33,14 @@
 .Nav a {
   text-decoration: none;
 }
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 160px 0 0 0;/*needed to dodge header and nav */
+  border: 2px solid blue;
+
+}
 .ArticleList {
   list-style: none;
   display: grid;
@@ -40,7 +48,6 @@
   grid-gap:0.25rem;
   max-width: 1400px;
   padding: 0.25rem;
-  margin: 160px 0 0 0;
   border: 2px solid orange;
 }
 @media (min-width: 350px) { /* renders 2 columns above this width  */
@@ -70,8 +77,30 @@
   box-sizing: border-box; 
 }
 .ArticleCard img {
-  max-width: 100%; /* Image won't exceed the container width */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; 
+  height: auto; 
 }
 
+.SingleArticle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width:100%;
+  border: solid red;
+}
+.SingleArticle li {
+  list-style: none;
+  margin-right: 10px;
+}
 
+.author-date-time, .votes-comments {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  border: solid green
+}
+
+.author-date-time,  .votes-comments span {
+  flex: 1;
+}
