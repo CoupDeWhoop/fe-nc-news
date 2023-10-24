@@ -1,0 +1,69 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display:flex;
+  align-items: center;
+  font-size: large;
+  background-color: gainsboro;
+  justify-content: center;
+}
+.icon {
+  font-size: 50px;
+  margin-right: 20px;
+  padding-top: 15px;
+}
+.Nav {
+  position: fixed;
+  top: 70px; /* Adjust this value to match height of header */
+  left: 0;
+  width: 100%;
+  background-color: gainsboro;
+  color: #fff;
+}
+.Nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.Nav li {
+  margin-right: 20px;
+}
+.Nav a {
+  text-decoration: none;
+}
+.ArticleList {
+  padding-top: 500px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Three columns per row */
+  max-width: 1400px;
+  padding: 0;
+  margin: 0 auto;
+  border: 2px solid orange;
+}
+@media (max-width: 768px) {
+  .ArticleList {
+    grid-template-columns: repeat(3, 1fr); /* Three columns per row for smaller screens */
+  }
+}
+@media (min-width: 1200px) {
+  .ArticleList {
+    grid-template-columns: repeat(5, 1fr); /* Five columns per row for when viewport width is more than 1200px */
+  }
+}
+.ArticleCard {
+  width: 25% - 1px;
+  height:100%;
+  padding: none;
+  margin: 0.25rem;
+  border: 2px solid red;
+  box-sizing: border-box; 
+  overflow: hidden; 
+}
+
+.ArticleCard img {
+  max-width: 100%; /* Image won't exceed the container width */
+  height: auto; /* Maintain aspect ratio */
+}
