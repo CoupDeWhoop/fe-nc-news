@@ -19,8 +19,8 @@
   top: 70px; /* Adjust this value to match height of header */
   left: 0;
   width: 100%;
+  color:black;
   background-color: gainsboro;
-  color: #fff;
 }
 .Nav ul {
   list-style: none;
@@ -34,36 +34,44 @@
   text-decoration: none;
 }
 .ArticleList {
-  padding-top: 500px;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Three columns per row */
+  grid-template-columns:  1fr; /*only does one column at below first min-width below*/
+  grid-gap:0.25rem;
   max-width: 1400px;
-  padding: 0;
-  margin: 0 auto;
+  padding: 0.25rem;
+  margin: 160px 0 0 0;
   border: 2px solid orange;
 }
-@media (max-width: 768px) {
+@media (min-width: 350px) { /* renders 2 columns above this width  */
   .ArticleList {
-    grid-template-columns: repeat(3, 1fr); /* Three columns per row for smaller screens */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 550px) {
   .ArticleList {
-    grid-template-columns: repeat(5, 1fr); /* Five columns per row for when viewport width is more than 1200px */
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+@media (min-width: 768px) {
+  .ArticleList {
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+@media (min-width: 1200px) { /* Five columns per row for when viewport width is more than 1200px */
+  .ArticleList {
+    grid-template-columns: repeat(5, 1fr); 
   }
 }
 .ArticleCard {
-  width: 25% - 1px;
   height:100%;
   padding: none;
-  margin: 0.25rem;
-  border: 2px solid red;
+  border: 2px solid gainsboro;
   box-sizing: border-box; 
-  overflow: hidden; 
 }
-
 .ArticleCard img {
   max-width: 100%; /* Image won't exceed the container width */
   height: auto; /* Maintain aspect ratio */
 }
+
+

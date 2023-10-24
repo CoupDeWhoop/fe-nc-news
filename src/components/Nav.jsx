@@ -3,12 +3,14 @@ import { useState, useEffect } from 'react';
 import { getTopics } from '../../utils/api';
 
 const Nav = () => {
-  const  [topics, setTopics] = useState([])
-  
+  const  [topics, setTopics] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     getTopics()
     .then((data) => {
       setTopics(data)
+      setLoading(false)
     })
     .catch((err) => {
       console.log(err)
@@ -23,14 +25,21 @@ const Nav = () => {
           <Link to="/">Home</Link>
         </li>
         {topics.map(({ slug }) => {
-          console.log(slug)
+          if (loading) {
+            return(
+              <li key="load-nav">
+                <p>Loading topic</p>
+              </li>
+            )
+          } else {
           return(
             <li key={slug}>
-             <p>{slug}</p>
+             { <p>{slug.charAt(0).toUpperCase() + slug.slice(1)}</p> /*capitalise topic name */}
             </li>
-        )
+            )
           }
-        )}
+        }
+      )}
       </ul>
     </nav>
   )
