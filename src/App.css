@@ -1,0 +1,77 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display:flex;
+  align-items: center;
+  font-size: large;
+  background-color: gainsboro;
+  justify-content: center;
+}
+.icon {
+  font-size: 50px;
+  margin-right: 20px;
+  padding-top: 15px;
+}
+.Nav {
+  position: fixed;
+  top: 70px; /* Adjust this value to match height of header */
+  left: 0;
+  width: 100%;
+  color:black;
+  background-color: gainsboro;
+}
+.Nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.Nav li {
+  margin-right: 20px;
+}
+.Nav a {
+  text-decoration: none;
+}
+.ArticleList {
+  list-style: none;
+  display: grid;
+  grid-template-columns:  1fr; /*only does one column at below first min-width below*/
+  grid-gap:0.25rem;
+  max-width: 1400px;
+  padding: 0.25rem;
+  margin: 160px 0 0 0;
+  border: 2px solid orange;
+}
+@media (min-width: 350px) { /* renders 2 columns above this width  */
+  .ArticleList {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+@media (min-width: 550px) {
+  .ArticleList {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+@media (min-width: 768px) {
+  .ArticleList {
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+@media (min-width: 1200px) { /* Five columns per row for when viewport width is more than 1200px */
+  .ArticleList {
+    grid-template-columns: repeat(5, 1fr); 
+  }
+}
+.ArticleCard {
+  height:100%;
+  padding: none;
+  border: 2px solid gainsboro;
+  box-sizing: border-box; 
+}
+.ArticleCard img {
+  max-width: 100%; /* Image won't exceed the container width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
