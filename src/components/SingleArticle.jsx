@@ -13,6 +13,7 @@ export default function SingleArticle () {
         .then((article) => {
             setArticle(article)
             setLoading(false)
+
         })
         .catch((err) => {
             console.log(err)
