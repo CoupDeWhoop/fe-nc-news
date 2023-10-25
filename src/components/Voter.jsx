@@ -1,33 +1,28 @@
 import { FaThumbsUp, FaRegThumbsUp, FaThumbsDown, FaRegThumbsDown } from 'react-icons/fa6';
 import { useState } from "react";
+import Error from './Error';
 import { updateVotes } from "../../utils/api";
 
 export default function Voter({votes, article_id}) {
+    const [error, setError] = useState(null);
     const [voteDiff, setVoteDiff] = useState(0);
-    // const [isFlashing, setIsFlashing] = useState(false);
 
     const incVote = (value) => {
         setVoteDiff((currentVoteDiff) => {
             return currentVoteDiff + value;
         })
-        updateVotes(article_id, value).catch(() => {
+        updateVotes(article_id, value).catch((err) => {
+            setError(err)
             setVoteDiff(0);
         })
-
-        // if (value === 1) {
-        //     setIsFlashing(true);
-        //     console.log(isFlashing)
-        //     setTimeout(() => {
-        //         setIsFlashing(false);
-        //     }, 1000);
-        // }
     };
-
-
-
 
     return (
             <div className="voting-component">
+                {error ? (
+                    <Error message={error.message} onClose={() => setError(null)} />
+                    ) : null}
+
                 <button 
                     className={`upvote ${voteDiff === 1? 'flash-icon' : ''}`}
                     disabled={voteDiff === 1}
