@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "./Loading";
 import CommentList from "./CommentList";
+import Voter from "./Voter"
 import { getSingleArticle } from "../../utils/api";
 
 export default function SingleArticle () {
@@ -41,7 +42,7 @@ export default function SingleArticle () {
             <article className="SingleArticle">
                 <h2>{title}</h2>
                 <img src={article_img_url} alt={`a ${topic} image related to the article`} />
-                <p className="votes"><strong>Votes: {votes}</strong></p>
+                <Voter votes={votes} article_id={article_id} />
                 <p>{body}</p>
                 <p className="author-date-time">
                     <span>Author: {author}</span>
@@ -49,7 +50,7 @@ export default function SingleArticle () {
                 </p>
 
             </article>
-            <CommentList article_id={article_id} comment_count={comment_count}/>
+            <CommentList article_id={article_id} comment_count={comment_count} />
         </section>
       );
 }      
