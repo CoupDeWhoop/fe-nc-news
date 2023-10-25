@@ -9,6 +9,7 @@ export default function CommentCard (props) {
                     <span className="comment-author">{author}</span>
                     <span className="comment-votes"><strong>Votes: {votes}</strong></span>
                 </div>
+                <div className="comment-divider"></div>
             </article>
     )
 }

@@ -88,7 +88,7 @@
   flex-direction: column;
   align-items: center;
   max-width:100%;
-  /* border: solid red; */
+  padding: 0 10rem;
 }
 .SingleArticle li {
   list-style: none;
@@ -111,9 +111,11 @@
 .author-date-time,  .votes-comments span {
   flex: 1;
 }
-.comments-section h3 {
-  padding-left: 40px;
-  border-top: solid grey;
+.comments-section {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 1rem;
   padding-top: 20px;
 }
 .CommentList {
@@ -121,6 +123,12 @@
 }
 .comment {
   margin-right: 40px;
+  padding-bottom: 30px;
+}
+.comment-divider {
+  border-bottom: 1px solid #888989;
+  padding-bottom: 20px;
+  margin: 2px 0;
 }
 .comment-metadata {
   display: flex;

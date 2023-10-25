@@ -33,7 +33,7 @@ export default function SingleArticle () {
         } = article;
 
     const dateArray = created_at.split('T'); // deals with UTC timestamp -> 2020-02-29T11:12:00.000Z
-    const day = dateArray[0]
+    const date = dateArray[0]
     const time = dateArray[1].slice(0,5)
 
     return (
@@ -45,7 +45,7 @@ export default function SingleArticle () {
                 <p>{body}</p>
                 <p className="author-date-time">
                     <span>Author: {author}</span>
-                    <span>{day}{time}</span>
+                    <span>{date} {time}</span>
                 </p>
 
             </article>
