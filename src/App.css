@@ -1,3 +1,4 @@
+
 .header {
   position: fixed;
   top: 0;
@@ -37,8 +38,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 160px 0 0 0;/*needed to dodge header and nav */
-  border: 2px solid blue;
+  margin: 160px 0 0 0;
+  padding: 0 50px;
+  /* border: 2px solid blue; */
 
 }
 .ArticleList {
@@ -48,7 +50,7 @@
   grid-gap:0.25rem;
   max-width: 1400px;
   padding: 0.25rem;
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
 }
 @media (min-width: 350px) { /* renders 2 columns above this width  */
   .ArticleList {
@@ -86,21 +88,45 @@
   flex-direction: column;
   align-items: center;
   max-width:100%;
-  border: solid red;
+  /* border: solid red; */
 }
 .SingleArticle li {
   list-style: none;
   margin-right: 10px;
 }
+.SingleArticle img {
+  max-width: 100%;
+  width: 100%;
+  max-width:600px;
+  height: auto;
+}
 
-.author-date-time, .votes-comments {
+.author-date-time, .votes {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
-  border: solid green
 }
 
 .author-date-time,  .votes-comments span {
   flex: 1;
+}
+.comments-section h3 {
+  padding-left: 40px;
+  border-top: solid grey;
+  padding-top: 20px;
+}
+.CommentList {
+  list-style:none;
+}
+.comment {
+  margin-right: 40px;
+}
+.comment-metadata {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.comment-author {
+  font-weight: bold;
 }
