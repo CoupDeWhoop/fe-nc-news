@@ -10,8 +10,8 @@ export const getTopics = () => {
     })
 }
 
-export const getArticles = () => {
-    return newsApi.get('/articles').then(({data}) => {
+export const getArticles = (topic) => {
+    return newsApi.get('/articles', { params: { topic }}).then(({data}) => {
         return data.articles;
     })
 }

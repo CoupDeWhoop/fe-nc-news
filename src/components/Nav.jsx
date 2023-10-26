@@ -21,9 +21,7 @@ const Nav = () => {
   return (
     <nav className="Nav">
       <ul >
-        <li>
-          <Link to="/">Home</Link>
-        </li>
+          <Link to="/"><p className="nav-link"><strong>home</strong></p></Link>
         {topics.map(({ slug }) => {
           if (loading) {
             return(
@@ -33,9 +31,9 @@ const Nav = () => {
             )
           } else {
           return(
-            <li key={slug}>
-              <p><strong>{slug}</strong></p>
-            </li>
+            <Link to={`/articles/?topic=${slug}`}>
+              <p className="nav-link"><strong>{slug}</strong></p>
+            </Link>
             )
           }
         }
