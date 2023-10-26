@@ -5,19 +5,23 @@ import { addComment } from "../../utils/api";
 import { UserContext } from '../contexts/UserContext';
 
 
-export default function AddComment ({ article_id }) {
+export default function AddComment ({ article_id, setNewComments }) {
+    const { user } = useContext(UserContext);
     const [error, setError] = useState(null);
     const [comment, setComment] = useState("");
-    const { user } = useContext(UserContext);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleCommentChange = (e) => {
         setComment(e.target.value);
     };
 
     const handleSubmitComment = () => {
+        setIsSubmitting(true);
         addComment(article_id, user.username, comment)
-        .then(() => {
+        .then((comment) => {
+            setNewComments(comment.body)
             setComment("");
+            setIsSubmitting(false);
           })
         .catch((err) => {
             setError(err)
@@ -38,8 +42,8 @@ export default function AddComment ({ article_id }) {
                 maxRows={4}
                 variant="filled"
             />
-            <Button variant="contained" onClick={handleSubmitComment}>
-                Submit
+            <Button variant="contained" onClick={handleSubmitComment} disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Submit"}
             </Button>
         </Box>
     );
