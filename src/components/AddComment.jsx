@@ -42,7 +42,7 @@ export default function AddComment ({ article_id, setNewComments }) {
                 maxRows={4}
                 variant="filled"
             />
-            <Button variant="contained" onClick={handleSubmitComment} disabled={isSubmitting}>
+            <Button variant="contained" onClick={handleSubmitComment} disabled={isSubmitting || comment.trim() === ""}>
                 {isSubmitting ? "Submitting..." : "Submit"}
             </Button>
         </Box>
