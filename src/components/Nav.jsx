@@ -34,7 +34,7 @@ const Nav = () => {
           } else {
           return(
             <li key={slug}>
-             { <p>{slug.charAt(0).toUpperCase() + slug.slice(1)}</p> /*capitalise topic name */}
+              <p><strong>{slug}</strong></p>
             </li>
             )
           }
