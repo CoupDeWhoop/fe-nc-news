@@ -9,7 +9,6 @@ export default function ArticleList () {
     const [loading, setLoading] = useState(true)
     const [searchParams, setSearchParams] = useSearchParams();
     const topic = searchParams.get("topic");
-    console.log(topic)
 
     useEffect(() => {
         getArticles(topic)
