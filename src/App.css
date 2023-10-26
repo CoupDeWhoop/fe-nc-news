@@ -18,27 +18,32 @@
 }
 .Nav {
   position: fixed;
-  top: 90px;
+  top: 65px;
   left: 0;
+  height: 65px;
   width: 100%;
   color:black;
   background-color: gainsboro;
   z-index: 1;
-  border: solid black;
 }
 .Nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
 }
-.Nav li {
+.nav-link {
   margin-right: 20px;
 }
 .Nav p {
   color: red;
+  padding-bottom: 4px;
 }
 .Nav a {
   text-decoration: none;
+}
+.navbar-topic {
+  border-bottom: solid red;
+  border-width: 5px;
 }
 .user-card {
   position: absolute;
@@ -69,8 +74,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 160px 0 0 0;
-  padding: 0 50px;
+  margin: 130px 0 0 0;
+  padding: 0 10%;
   /* border: 2px solid blue; */
 
 }
@@ -98,7 +103,7 @@
     grid-template-columns: repeat(4, 1fr); 
   }
 }
-@media (min-width: 1200px) { /* Five columns per row for when viewport width is more than 1200px */
+@media (min-width: 1200px) { /* Five columns if viewport width > 1200px */
   .ArticleList {
     grid-template-columns: repeat(5, 1fr); 
   }
@@ -109,6 +114,20 @@
   text-align: left;
   border: 2px solid gainsboro;
   box-sizing: border-box; 
+  display:flex;
+  flex-direction: column;
+}
+.ArticleCard-image {
+  height: 140px;
+  overflow: hidden;
+}
+.ArticleCard img {
+  object-fit: cover;
+  height: 100%; 
+  width: 100%;
+}
+.ArticleCard img:hover {
+  transform: scale(1.05);
 }
 .ArticleCard-text {
   padding:15px 15px 25px 20px;
@@ -120,6 +139,10 @@
   color: red;
   font-size: 14px;
   padding-bottom: 5px;
+  transform-origin: left;
+}
+.article-topic:hover { 
+  transform: scale(1.15); 
 }
 .ArticleCard a {
   text-decoration: none;
@@ -128,14 +151,6 @@
 .ArticleCard a:hover {
   color: rgb(255, 31, 31)
 }
-.ArticleCard img {
-  max-width: 100%; 
-  height: auto; 
-}
-.ArticleCard img:hover {
-  transform: scale(1.05);
-}
-
 
 .SingleArticle {
   display: flex;
