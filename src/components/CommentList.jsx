@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Loading from "./Loading";
 import CommentCard from "./CommentCard";
+import AddComment from "./AddComment"
 import { getComments } from "../../utils/api";
 
 export default function CommentList({ article_id, comment_count}) {
@@ -23,6 +24,7 @@ export default function CommentList({ article_id, comment_count}) {
     return (
         <section className="comments-section">
             <h3>{comment_count} Comments</h3>
+            <AddComment article_id={article_id} />
             <ul className="CommentList">
             {comments.map((comment)=> {
                 return (

@@ -9,6 +9,7 @@
   font-size: large;
   background-color: gainsboro;
   justify-content: center;
+  z-index: 2;
 }
 .icon {
   font-size: 50px;
@@ -17,11 +18,13 @@
 }
 .Nav {
   position: fixed;
-  top: 70px; /* Adjusted to match height of header */
+  top: 90px;
   left: 0;
   width: 100%;
   color:black;
   background-color: gainsboro;
+  z-index: 1;
+  border: solid black;
 }
 .Nav ul {
   list-style: none;
@@ -31,8 +34,36 @@
 .Nav li {
   margin-right: 20px;
 }
+.Nav p {
+  color: red;
+}
 .Nav a {
   text-decoration: none;
+}
+.user-card {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 10px; 
+  overflow: hidden; 
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-card img {
+  width: 60px; 
+  height: 60px; 
+  object-fit: cover;
+  border-radius: 10px; 
+}
+.user-card p {
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+  color: black;
 }
 .section {
   display: flex;
@@ -47,7 +78,7 @@
   list-style: none;
   display: grid;
   grid-template-columns:  1fr; /*only does one column at below first min-width below*/
-  grid-gap:0.25rem;
+  grid-gap:0.45rem;
   max-width: 1400px;
   padding: 0.25rem;
   /* border: 2px solid orange; */
@@ -75,13 +106,36 @@
 .ArticleCard {
   height:100%;
   padding: none;
+  text-align: left;
   border: 2px solid gainsboro;
   box-sizing: border-box; 
+}
+.ArticleCard-text {
+  padding:15px 15px 25px 20px;
+}
+.ArticleCard h4 {
+  margin: 0;
+}
+.article-topic {
+  color: red;
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+.ArticleCard a {
+  text-decoration: none;
+  color: #000004e1;
+}
+.ArticleCard a:hover {
+  color: rgb(255, 31, 31)
 }
 .ArticleCard img {
   max-width: 100%; 
   height: auto; 
 }
+.ArticleCard img:hover {
+  transform: scale(1.05);
+}
+
 
 .SingleArticle {
   display: flex;
@@ -112,19 +166,21 @@
 }
 .upvote {
   margin-right:10px;
-  border: none;
-  padding: 5px 10px;
-  background-color: rgb(237, 234, 234);
   border-radius: 15px 0 0 15px;
-
 }
 .downvote {
   margin-left:10px;
+  border-radius: 0 15px 15px 0;
+}
+.upvote, .downvote {
   border: none;
   padding: 5px 10px;
   background-color: rgb(237, 234, 234);
-  border-radius: 0 15px 15px 0;
 }
+.upvote:hover, .downvote:hover {
+  background-color: #ccc; 
+}
+
 .vote-icon {
   font-size: 25px;
 }
@@ -139,16 +195,13 @@
 .flash-icon {
   animation: flash 1s;
 }
-.author-date-time {
+.article-metadata {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
 }
 
-.author-date-time,  .votes-comments span {
-  flex: 1;
-}
 .comments-section {
   display: flex;
   flex-direction: column;
@@ -156,6 +209,8 @@
   padding: 1rem;
   padding-top: 20px;
 }
+
+
 .CommentList {
   list-style:none;
 }

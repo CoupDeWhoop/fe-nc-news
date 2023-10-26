@@ -44,7 +44,7 @@ export default function SingleArticle () {
                 <img src={article_img_url} alt={`a ${topic} image related to the article`} />
                 <Voter votes={votes} article_id={article_id} />
                 <p>{body}</p>
-                <p className="author-date-time">
+                <p className="article-metadata">
                     <span>Author: {author}</span>
                     <span>{date} {time}</span>
                 </p>
