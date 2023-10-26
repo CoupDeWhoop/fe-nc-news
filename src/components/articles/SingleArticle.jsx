@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Loading from "./Loading";
-import CommentList from "./CommentList";
-import Voter from "./Voter"
-import { getSingleArticle } from "../../utils/api";
+import Loading from "../Loading";
+import CommentList from "../comments/CommentList";
+import Voter from "../Voter"
+import { getSingleArticle } from "../../../utils/api";
 
 export default function SingleArticle () {
     const { article_id } = useParams();

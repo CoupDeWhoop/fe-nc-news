@@ -1,8 +1,8 @@
 import { useState, useContext } from "react";
 import { TextField, Button, Box } from '@mui/material';
-import Error from './Error';
-import { addComment } from "../../utils/api"; 
-import { UserContext } from '../contexts/UserContext';
+import Error from '../Error';
+import { addComment } from "../../../utils/api"; 
+import { UserContext } from '../../contexts/UserContext';
 
 
 export default function AddComment ({ article_id, setNewComments }) {

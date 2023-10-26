@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import Loading from "./Loading";
+import Loading from "../Loading";
 import CommentCard from "./CommentCard";
 import AddComment from "./AddComment"
-import { getComments } from "../../utils/api";
+import { getComments } from "../../../utils/api";
 
 export default function CommentList({ article_id, comment_count}) {
     const [comments, setComments] = useState([])

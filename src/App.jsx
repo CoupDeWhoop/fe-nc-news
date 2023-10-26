@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header';
 import Nav from './components/Nav';
 import Home from './components/Home';
-import SingleArticle from './components/SingleArticle';
-import CommentList from './components/CommentList'
+import SingleArticle from './components/articles/SingleArticle';
+import CommentList from './components/comments/CommentList'
 
 function App() {
 

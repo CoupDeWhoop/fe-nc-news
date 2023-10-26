@@ -1,4 +1,4 @@
-import ArticleList from "./ArticleList"
+import ArticleList from "./articles/ArticleList"
 
 export default function Home () {
     return (
