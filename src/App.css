@@ -24,15 +24,15 @@
   width: 100%;
   color:black;
   background-color: gainsboro;
-  z-index: 1;
+  z-index: 2;
 }
 .Nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
-.nav-link {
-  margin-right: 20px;
+.Nav ul:last-child {
+  margin-right: 0;
 }
 .Nav p {
   color: red;
@@ -70,14 +70,31 @@
   text-align: center;
   color: black;
 }
+.sort-panel {
+  position: fixed; 
+  top: 135px; 
+  right: 20px; 
+  background-color: gainsboro;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display:flex;
+  flex-direction: column;
+}
+.sort-panel button {
+  padding: 10px;
+  margin: 2px;
+  width: 150px;
+}
+.sort-panel-radio-switch {
+  margin-left: 10px;
+}
 .section {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 130px 0 0 0;
   padding: 0 10%;
-  /* border: 2px solid blue; */
-
 }
 .ArticleList {
   list-style: none;
