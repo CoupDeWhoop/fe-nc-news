@@ -9,9 +9,13 @@ export const getTopics = () => {
         return data.topics;
     })
 }
+export const getUsers = () => {
+    return newsApi.get('/users').then(({data}) => {
+        return data.users;
+    })
+}
 
 export const getArticles = (topic, sort_by, order) => {
-    console.log(topic, sort_by, order)
     return newsApi.get('/articles', { params: { topic, sort_by, order }}).then(({data}) => {
         return data.articles;
     })

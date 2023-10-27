@@ -1,5 +1,5 @@
-import { createContext, useState } from 'react';
-
+import { createContext, useState, useEffect } from 'react';
+import { getUsers } from '../../utils/api';
 export const UserContext = createContext();
 
 
@@ -11,10 +11,20 @@ const defaultUser = {
   
   
 export const UserProvider = ({ children }) => {
+    const [allUsers, setAllUsers ] = useState([])
     const [user, setUser] = useState(defaultUser);
   
+    useEffect(() => {
+      getUsers()
+      .then((users) => {
+          setAllUsers(users);
+      })
+      .catch((err) => {
+          console.log(err)
+      })
+  }, [])
     return (
-      <UserContext.Provider value={{ user, setUser }}>
+      <UserContext.Provider value={{ user, setUser, allUsers, setAllUsers }}>
         {children}
       </UserContext.Provider>
     );

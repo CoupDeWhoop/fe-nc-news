@@ -250,24 +250,54 @@
 
 .CommentList {
   list-style:none;
+  margin: none;
 }
-.comment {
-  margin-right: 40px;
-  padding-bottom: 30px;
+.CommentList ul {
+  margin: 0;
 }
-.comment-divider {
-  border-bottom: 1px solid #888989;
-  padding-bottom: 20px;
-  margin: 2px 0;
+
+.comment-grid-container {
+  display: grid;
+  grid-template-columns: 15% 75% 10%;
+  grid-template-rows: 4fr 1fr; 
+  gap: 10px;
+  border: solid purple;
 }
+
+
+.comment-body {
+  grid-column: span 2;
+}  
+
+.grid-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.comment-image-container {
+  width: 100%; 
+  max-width: 100%;
+  max-height: 100%; 
+  overflow: hidden; 
+}
+
+.comment-image-container img {
+  align-self: center;
+  width: 100%;
+  height: auto; 
+} 
+
 .comment-metadata {
+  grid-row: 2;
+  grid-column: 2 / span 2 ;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.comment-author {
-  font-weight: bold;
-}
+
+
+
 .error-container {
   position: fixed;
   bottom: 0;
