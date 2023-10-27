@@ -5,6 +5,7 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import SingleArticle from './components/articles/SingleArticle';
 import CommentList from './components/comments/CommentList'
+import SortPanel from './components/SortPanel';
 
 function App() {
 
