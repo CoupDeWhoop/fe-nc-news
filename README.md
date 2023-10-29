@@ -7,13 +7,14 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-<span id="copy-text">https://nc-news-api-zlkx.onrender.com/</span>
-<button onclick="copyToClipboard('copy-text')">Copy</button>
+```html
+<div>
+    <span id="copy-text">https://nc-news-api-zlkx.onrender.com/</span>
+    <button onclick="copyToClipboard('copy-text')">Copy</button>
 
-<span id="copy-text">npm install</span>
-<button onclick="copyToClipboard('copy-text')">Copy</button>
-
-npm install
+    <span id="copy-text">npm install</span>
+    <button onclick="copyToClipboard('copy-text')">Copy</button>
+</div>
 
 <script>
 function copyToClipboard(elementId) {
