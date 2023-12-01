@@ -2,7 +2,7 @@
 
 ### Project Summary
 
-A React frontend web application that utilises a custom News API
+A React frontend web application that utilises a custom News API, built during the Northcoders 13 week bootcamp.
 
 You can find the live, hosted version here --> !!!!!!!!
 
@@ -28,7 +28,7 @@ You are now ready to run this locally by following the steps below:
     - run this command:
       
 ```
-git clone https://github.com/CoupDeWhoop/fe-nc-news.git
+git clone https://github.com/CoupDeWhoop/nc-news.git
 ```
 
 
