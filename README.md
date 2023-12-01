@@ -28,13 +28,13 @@ You are now ready to run this locally by following the steps below:
     - run this command:
       
 ```
-git clone https://github.com/CoupDeWhoop/nc-news.git
+git clone https://github.com/CoupDeWhoop/fe-nc-news.git
 ```
 
 
     
 ```
-cd nc-news
+cd fe-nc-news
 ```
 
 
@@ -44,7 +44,7 @@ you are now ready to open this on your IDE of choice. If this is VSCode, run the
 
 
 ```
-code nc-news
+code fe-nc-news
 ```
 
   
