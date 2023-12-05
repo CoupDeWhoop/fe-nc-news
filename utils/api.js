@@ -9,9 +9,13 @@ export const getTopics = () => {
         return data.topics;
     })
 }
+export const getUsers = () => {
+    return newsApi.get('/users').then(({data}) => {
+        return data.users;
+    })
+}
 
 export const getArticles = (topic, sort_by, order) => {
-    console.log(topic, sort_by, order)
     return newsApi.get('/articles', { params: { topic, sort_by, order }}).then(({data}) => {
         return data.articles;
     })
@@ -38,5 +42,11 @@ export const updateVotes = (article_id, value) => {
 export const addComment = (article_id, username, body) => {
     return newsApi.post(`/articles/${article_id}/comments`, { body:body, username:username }).then(({data}) => {
         return data.comment;
+    })
+}
+
+export const deleteComment = (comment_id) => {
+    return newsApi.delete(`/comments/${comment_id}`).then((response) => {
+        return response;
     })
 }

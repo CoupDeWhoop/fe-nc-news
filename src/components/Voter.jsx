@@ -24,7 +24,7 @@ export default function Voter({votes, article_id}) {
                     ) : null}
 
                 <button 
-                    className={`upvote ${voteDiff === 1? 'flash-icon' : ''}`}
+                    className={`upvote ${voteDiff === 1? 'flash-icon-up' : ''}`}
                     disabled={voteDiff === 1}
                     onClick={() => {incVote(1)}} 
                 >
@@ -32,7 +32,7 @@ export default function Voter({votes, article_id}) {
                 </button>
                 <span >{votes + voteDiff}</span>
                 <button 
-                    className="downvote" 
+                    className={`downvote ${voteDiff === -1? 'flash-icon-down' : ''}` }
                     disabled={voteDiff === -1}
                     onClick={() => {incVote(-1)}} 
                 >

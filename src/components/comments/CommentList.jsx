@@ -8,6 +8,8 @@ export default function CommentList({ article_id, comment_count}) {
     const [comments, setComments] = useState([])
     const [loading, setLoading] = useState(true)
     const [newComments, setNewComments] = useState({})
+    const [deleted, setDeleted] = useState("")
+    const [showDeleteMessage, setShowDeleteMessage] = useState({show: false, commentId: null});
 
     useEffect(() => {
         getComments(article_id)
@@ -18,18 +20,28 @@ export default function CommentList({ article_id, comment_count}) {
         .catch((err) => {
             console.log(err)
         })
-    }, [newComments])
+    }, [newComments, deleted])
 
     if (loading) return (<Loading />)
 
     return (
         <section className="comments-section">
             <h3>{comment_count} Comments</h3>
-            <AddComment article_id={article_id} setNewComments={setNewComments} />
+            <div className="add-comment">
+                <AddComment article_id={article_id} setNewComments={setNewComments} />
+            </div>
             <ul className="CommentList">
             {comments.map((comment)=> {
                 return (
-                    <CommentCard key={comment.comment_id} body={comment.body} author={comment.author} votes={comment.votes} />
+                    <CommentCard 
+                        key={comment.comment_id} 
+                        commentId={comment.comment_id} 
+                        body={comment.body} 
+                        author={comment.author} 
+                        votes={comment.votes} 
+                        setDeleted={setDeleted}
+                        showDeleteMessage={showDeleteMessage}
+                        setShowDeleteMessage={setShowDeleteMessage}/>
                 )
             })}
             </ul>

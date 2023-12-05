@@ -1,7 +1,7 @@
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { Link, useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 
 export default function SortPanel ({ order, toggleOrder }) {
   const [searchParams, setSearchParams] = useSearchParams();
