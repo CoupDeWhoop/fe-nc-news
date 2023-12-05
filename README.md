@@ -5,7 +5,7 @@
 
 A React frontend web application that utilises a custom News API, built during the Northcoders 13 week bootcamp.
 
-You can find the live, hosted version here --> !!!!!!!!
+You can find the live, hosted version here --> [NC News on netlify](https://incomparable-pithivier-d5878b.netlify.app/))
 
 Built with JavaScript and React and styled using CSS with a couple of Material UI components thrown in.
 
