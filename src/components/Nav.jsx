@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { getTopics } from '../../utils/api';
 import SortPanel from './SortPanel';
@@ -10,6 +10,10 @@ const Nav = () => {
   const [order, toggleOrder] = useState("desc");
   const [searchParams, setSearchParams] = useSearchParams();
   const topic = searchParams.get("topic");
+  
+  const location = useLocation();
+  const isArticlesList = location.pathname === '/' || location.pathname === '/articles'
+
 
   useEffect(() => {
     getTopics()
@@ -34,6 +38,8 @@ const Nav = () => {
   return (
     <nav className="Nav">
       <ul >
+        <div className="nav-gap"></div>
+        <div className="nav-grid-topics">
           <Link to="/"><p className="nav-link"><strong>home</strong></p></Link>
             {topics.map(({ slug }) => {
               if (loading) {
@@ -44,19 +50,22 @@ const Nav = () => {
                 )
               } else {
               return(
-                <Link key={slug} to={`/articles/?topic=${slug}`}>
-                  <p className={`nav-link ${topic === slug ? 'navbar-topic' : ""}`}><strong>{slug}</strong></p>
-                </Link>
+                  <Link key={slug} to={`/articles/?topic=${slug}`}>
+                    <p className={`nav-link ${topic === slug ? 'navbar-topic' : ""}`}><strong>{slug}</strong></p>
+                  </Link>
                 )
               }
             }
           )}
-          <div className="hover-area" 
+          </div>
+          {isArticlesList? (
+            <div className="hover-area" 
               onMouseEnter={handleSortByMouseEnter}
               onMouseLeave={handleSortByMouseLeave}>
-            <p>Sort options</p>
-          {sortByVisible ? <SortPanel order={order} toggleOrder={toggleOrder}/> : null}
-          </div>
+              <p className="sort-option-label">Sort options</p>
+              {sortByVisible ? <SortPanel order={order} toggleOrder={toggleOrder}/> : null}
+            </div>
+          ): null}
       </ul>
     </nav>
   )
