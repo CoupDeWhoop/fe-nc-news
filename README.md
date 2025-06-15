@@ -9,7 +9,7 @@ You can find the live, hosted version here --> [NC News on netlify](https://inco
 
 Built with JavaScript and React and styled using CSS with a couple of Material UI components thrown in.
 
-This application uses an API built by myself, which you can find here: [https://nc-news-portfolio.onrender.com/](https://nc-news-api-zlkx.onrender.com/api/)
+This application uses an API created for the project which you can find here: [https://nc-news-portfolio.onrender.com/](https://nc-news-api-zlkx.onrender.com/api/)
 
 
 ## Setup 
